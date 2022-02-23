@@ -18,7 +18,15 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/', [
+    'uses'          => 'App\Http\Controllers\LoginController@index',
+    'as'            => '/',
+    'middleware'    => ['guest:'.config('fortify.guard')]
+
+]);
+
+Route::get('/dashboard', [
     'uses'          => 'App\Http\Controllers\DashboardController@index',
-    'as'            => '/'
+    'as'            => '/dashboard',
+    'middleware'    => ['auth:sanctum', 'verified']
 ]);
 

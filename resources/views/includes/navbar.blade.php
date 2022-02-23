@@ -100,8 +100,10 @@
                 <i class="far fa-bell"></i>
                 <span class="badge badge-warning navbar-badge">15</span>
             </a>
+
             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
                 <span class="dropdown-item dropdown-header">15 Notifications</span>
+
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item">
                     <i class="fas fa-envelope mr-2"></i> 4 new messages
@@ -120,6 +122,27 @@
                 <div class="dropdown-divider"></div>
                 <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
             </div>
+
+            <!-- LogOut Dropdown Menu -->
+        <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+                <i class="far fa-bell"></i>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <div class="dropdown-divider"></div>
+                <a href="#" class="dropdown-item text-danger" onclick="event.preventDefault(); document.getElementById('logoutForm').submit();" >
+                    <i class="fas fa-envelope mr-2"></i>Logout
+                </a>
+                <form method="POST" action="{{ route('logout') }}" id="logoutForm">
+                    @csrf
+
+                </form>
+
+            </div>
+
+
+
         </li>
         <li class="nav-item">
             <a class="nav-link" data-widget="fullscreen" href="#" role="button">

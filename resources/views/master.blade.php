@@ -71,7 +71,8 @@
             </div>
 
             <!-- Sidebar Menu -->
-            @include('includes.sidebar')
+{{--            @include('includes.sidebar')--}}
+            @yield('sidebar')
             <!-- /.sidebar-menu -->
         </div>
         <!-- /.sidebar -->
